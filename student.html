@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Timetable Viewer</title>
+  <link rel="stylesheet" href="student.css" />
+</head>
+<body>
+  <header>
+    <h1>Student Timetable Viewer</h1>
+    <p>View your weekly class schedule below</p>
+  </header>
+
+  <div class="filters">
+    <label for="day">Filter by Day:</label>
+    <select id="day" onchange="filterTable()">
+      <option value="all">All</option>
+      <option value="Monday">Monday</option>
+      <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thursday">Thursday</option>
+      <option value="Friday">Friday</option>
+    </select>
+
+    <label for="subject">Filter by Subject:</label>
+    <select id="subject" onchange="filterTable()">
+      <option value="all">All</option>
+      <option value="Math">Math</option>
+      <option value="Science">Science</option>
+      <option value="English">English</option>
+      <option value="History">History</option>
+      <option value="Computer">Computer</option>
+    </select>
+  </div>
+
+  <table id="timetable">
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>9:00-10:00</th>
+        <th>10:00-11:00</th>
+        <th>11:00-12:00</th>
+        <th>12:00-1:00</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-day="Monday" data-subjects="Math Science English History">
+        <td>Monday</td>
+        <td>Math</td>
+        <td>Science</td>
+        <td>English</td>
+        <td>History</td>
+      </tr>
+      <tr data-day="Tuesday" data-subjects="English Math Computer Science">
+        <td>Tuesday</td>
+        <td>English</td>
+        <td>Math</td>
+        <td>Computer</td>
+        <td>Science</td>
+      </tr>
+      <tr data-day="Wednesday" data-subjects="History English Math Science">
+        <td>Wednesday</td>
+        <td>History</td>
+        <td>English</td>
+        <td>Math</td>
+        <td>Science</td>
+      </tr>
+      <tr data-day="Thursday" data-subjects="Computer History Science Math">
+        <td>Thursday</td>
+        <td>Computer</td>
+        <td>History</td>
+        <td>Science</td>
+        <td>Math</td>
+      </tr>
+      <tr data-day="Friday" data-subjects="Science Computer Math English">
+        <td>Friday</td>
+        <td>Science</td>
+        <td>Computer</td>
+        <td>Math</td>
+        <td>English</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="student.js"></script>
+</body>
+</html>
